@@ -1,0 +1,52 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.test
+.env.local
+.env.development.local
+.env.production.local
+
+# Logs
+logs
+*.log
+logs/
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build and runtime files
+dist/
+build/
+coverage/
+.tmp/
+.temp/
+.cache/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# TypeScript (if using TS)
+*.tsbuildinfo
+
+# Optional: uploaded files (if your app stores uploads locally)
+uploads/
+public/uploads/
+
+# Misc
+# Ignore test output or generated documentation if any
+test-output/
+doc/
