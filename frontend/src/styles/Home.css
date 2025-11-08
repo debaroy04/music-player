@@ -1,0 +1,256 @@
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.home-wrapper {
+  background-color: #111827;
+  color: #f9fafb;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.navbar {
+  background-color: #1f2937;
+  padding: 0.2rem 1rem; /* Tighter vertical space */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem; /* Slightly smaller text */
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Now Playing Section */
+.now-playing {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  background-color: #1e293b;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Current Song Block */
+.current-song {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1 1 300px;
+  min-width: 260px;
+  justify-content: center;
+  text-align: center;
+}
+
+.cover-art {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+.cover-art.playing {
+  animation: spin 4s linear infinite;
+}
+
+.song-info {
+  text-align: center;
+}
+
+.song-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.song-info p {
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.controls button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  margin: 0 1rem;
+  cursor: pointer;
+  color: #f9fafb;
+  transition: color 0.2s;
+}
+
+.controls button:hover {
+  color: #60a5fa;
+}
+
+/* Next Song Card */
+.next-song-card.enlarged {
+  position: relative;
+  background-color: #111827;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 220px;
+  min-width: 200px;
+  margin: 0 auto;
+  flex: 1 1 200px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.next-cover {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0.5rem auto;
+}
+
+.next-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.next-artist {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* ▶️ Play Button on Next Song Card */
+.next-play-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: #111827;
+  border: none;
+ 
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  
+}
+
+
+
+/* Song List Section */
+.song-list {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+}
+
+.song-list-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Song Card Items */
+.song-card {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.song-card:hover {
+  background-color: #1f2937;
+}
+
+.song-card.active {
+  background-color: #1e40af;
+}
+
+.cover-thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.song-card.active .cover-thumbnail {
+  animation: spin 6s linear infinite;
+}
+
+.song-meta h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.song-meta p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+/* Play Button in Song List */
+.song-play-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #f9fafb;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.song-play-btn:hover {
+  transform: scale(1.2);
+  color: #60a5fa;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .now-playing {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .current-song {
+    flex-direction: column;
+  }
+
+  .song-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .next-song-card.enlarged {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ...
+}
+
+.navbar button {
+  padding: 0.3rem 0.8rem;
+  background-color: #ef4444;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
